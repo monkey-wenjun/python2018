@@ -9,6 +9,7 @@ stulist = [
     {'name':'王五','age':15,'classid':'java'},
 ]
 
+
 # 定义一个学员的输出函数
 
 def showStu(stulist):
@@ -31,7 +32,8 @@ def main():
 
         print("="*12,"学员管理系统","="*14)
         print("{0:1}{1:13}{2:15}".format(" ","1.查看学员信息","2.添加学员信息"))
-        print("{0:1}{1:13}{2:15}".format(" ","3.删除学员信息","4.退出系统"))
+        print("{0:1}{1:13}{2:15}".format(" ","3.删除学员信息","4.修改学员信息"))
+        print("{0:1}{1:13}{2:15}".format(" ", "5.退出系统",""))
         print("="*40)
 
         key = input("请输入对应的选择:")
@@ -46,7 +48,7 @@ def main():
             print("="*12,"学员信息添加","="*14)
 
             stu = {}
-            stu['name'] =input("请输入你要添加的姓名:")
+            stu['name'] = input("请输入你要添加的姓名:")
             stu['age'] = input("请输入要添加的年龄:")
             stu['classid'] = input("请输入要添加的班级信息:")
             stulist.append(stu)
@@ -63,6 +65,14 @@ def main():
             input("按回车键继续...")
 
         elif key == "4":
+            showStu(stulist)
+            sid = int(input("请输入你需要修改的 id 号:"))-1
+            stulist[sid]["name"] = input("请输入你要修改的姓名:")
+            stulist[sid]["age"] = input("请输入你要修改的姓名:")
+            stulist[sid]["classid"] = input("请输入你要添加的班级信息:")
+            showStu(stulist)
+
+        elif key == "5":
             print("=" * 12, "退出系统", "=" * 14)
             break
 
