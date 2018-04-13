@@ -3,3 +3,6 @@
 
 
 print("hello world!")
+
+# 中文
+print("汪汪")
